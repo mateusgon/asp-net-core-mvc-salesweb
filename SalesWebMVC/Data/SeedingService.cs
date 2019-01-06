@@ -18,7 +18,7 @@ namespace SalesWebMVC.Data
 
         public void Seed ()
         {
-            if(_context.Departament.Any() || _context.Seller.Any())
+            if( _context.Departament.Any() || _context.Seller.Any() )
             {
                 return;
             }
@@ -30,6 +30,7 @@ namespace SalesWebMVC.Data
             _context.Departament.AddRange(departament);
             _context.Seller.AddRange(s1);
             _context.Sales.AddRange(sr1);
+            _context.SaveChanges();
         }
     }
 }
